@@ -50,8 +50,6 @@ call s:InitVariable("g:PIVCreateDefaultMappings", 1)
 call s:InitVariable("g:PIVPearStyle", 0)
 call s:InitVariable("g:PIVAutoClose", 0)
 
-" Auto expand tabs to spaces
-setlocal expandtab
 setlocal autoindent " Auto indent after a {
 setlocal smartindent
 
@@ -59,7 +57,9 @@ setlocal smartindent
 " comments
 setlocal textwidth=79
 
-setlocal nowrap     " Do not wrap lines automatically
+setlocal wrap     " wrap lines automatically
+setlocal noexpandtab " Do not convert tabs to spaces
+
 
 " Correct indentation after opening a phpdocblock and automatic * on every
 " line
@@ -71,8 +71,7 @@ setlocal makeprg=php\ -l\ %
 " Use errorformat for parsing PHP error output
 setlocal errorformat=%m\ in\ %f\ on\ line\ %l
 
-" Switch syntax highlighting on, if it was not
-if !exists("g:syntax_on") | syntax on | endif
+syntax on
 
 "setlocal keywordprg=pman " Use pman for manual pages
 
