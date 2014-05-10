@@ -67,8 +67,6 @@ setlocal makeprg=php\ -l\ %
 " Use errorformat for parsing PHP error output
 setlocal errorformat=%m\ in\ %f\ on\ line\ %l
 
-syntax on
-
 "setlocal keywordprg=pman " Use pman for manual pages
 
 " }}} Settings
